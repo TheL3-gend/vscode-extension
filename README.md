@@ -1,1 +1,0 @@
-# This is an extension to link chatgpt.com to vscode with no api keys
