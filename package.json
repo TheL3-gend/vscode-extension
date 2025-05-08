@@ -1,0 +1,47 @@
+{
+    "name": "vscode-chatgpt-web",
+    "displayName": "ChatGPT Web Editor",
+    "description": "Edit code using chat.openai.com without API keys via Puppeteer automation",
+    "version": "0.0.1",
+    "publisher": "your-name",
+    "engines": {
+      "vscode": "^1.60.0"
+    },
+    "categories": ["Other"],
+    "activationEvents": ["onCommand:chatgptWeb.editCode"],
+    "main": "./out/extension.js",
+    "contributes": {
+      "commands": [{
+        "command": "chatgptWeb.editCode",
+        "title": "ChatGPT Web: Edit Code"
+      }],
+      "configuration": {
+        "type": "object",
+        "title": "ChatGPT Web Editor",
+        "properties": {
+          "chatgptWeb.chromeExecutablePath": {
+            "type": "string",
+            "default": "",
+            "description": "Path to Chrome or Chrome-based browser executable"
+          },
+          "chatgptWeb.chromeProfilePath": {
+            "type": "string",
+            "default": "",
+            "description": "Path to Chrome user data directory for auth"
+          }
+        }
+      }
+    },
+    "scripts": {
+      "vscode:prepublish": "npm run compile",
+      "compile": "tsc -p ./"
+    },
+    "devDependencies": {
+      "@types/vscode": "^1.60.0",
+      "typescript": "^4.4.3"
+    },
+    "dependencies": {
+      "puppeteer-core": "^10.4.0"
+    }
+  }
+  
